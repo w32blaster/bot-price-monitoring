@@ -12,4 +12,8 @@ regenerate:
 	@echo "Regenerate the code using bot-scaffolding"
 	@bot-scaffolding -o generate
 
-.POHNY: test build generateTest
+up:
+	@echo "Run bot"
+	@go run `ls *.go` -t="-----" | grep -v _test.go
+
+.POHNY: test build generateTest up

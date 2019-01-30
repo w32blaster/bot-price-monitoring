@@ -4,7 +4,7 @@ import (
 	"log"
 	"strings"
 
-	"gopkg.in/telegram-bot-api.v4"
+	tgbotapi "gopkg.in/telegram-bot-api.v4"
 )
 
 // ProcessCommands process commands
@@ -19,11 +19,13 @@ func ProcessCommands(bot *tgbotapi.BotAPI, message *tgbotapi.Message) {
 
 	case "start":
 		sendMsg(bot, chatID, "Hi there! This bot helps you to monitor prices for a goods and notify you when price drops.")
+
+	case "add":
+		sendMsg(bot, chatID, "Ok, now send me the link of an item you want me to watch:")
+
+	case "list":
+		sendMsg(bot, chatID, "Here are list of all the saved items to watch")
 	}
-}
-
-func processHelpCommand(bot *tgbotapi.BotAPI, chatID string) {
-
 }
 
 // properly extracts command from the input string, removing all unnecessary parts

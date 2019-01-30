@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	"github.com/w32blaster/bot-price-monitoring/commands"
-	"gopkg.in/telegram-bot-api.v4"
+	tgbotapi "gopkg.in/telegram-bot-api.v4"
 )
 
 func main() {
